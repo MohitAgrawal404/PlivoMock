@@ -8,7 +8,7 @@ import { auth, provider } from "../firebase";
 export const Login = () => {
     let navigate = useNavigate();
     const log = (() => {
-        navigate("/dashboard");
+        navigate("/");
     });
 
     return (
