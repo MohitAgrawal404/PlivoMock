@@ -4,7 +4,7 @@ import {Dashboard} from './components/Dashboard';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
-import Camera from './camera.js';
+import Camera from './components/camera.js';
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
