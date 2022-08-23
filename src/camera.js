@@ -53,7 +53,7 @@ function Camera() {
 
     return (
         <div className='container'>
-            <h1 className='text-center'> Selfie</h1>
+            <h1 className='text-center'> Camera</h1>
             <video className='container' ref={videoRef}></video>
             <button onClick={takePicture} className='btn btn-danger container'> Take Photo</button>
             <canvas ref={photoRef}></canvas>
