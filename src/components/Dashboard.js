@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
-import firebase from "firebase/compat/app";
-import { signInWithPopup, getAdditionalUserInfo } from "firebase/auth";
-import { auth, provider } from "../firebase";
+import { UserAuth } from '../context/AuthContext'
 
 
 export const Dashboard = () => {
+    const navigate = useNavigate()
+    const {user, logOut} = UserAuth()
+
+    useEffect(() => {
+        if(!user) {
+            navigate("/login")
+        }
+    }, [user])
 
     return (
         <div>
+            <button onClick={logOut}>Logout</button>
             Dashboard
         </div>
     )

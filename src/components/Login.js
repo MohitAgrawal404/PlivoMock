@@ -1,21 +1,33 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import firebase from "firebase/compat/app";
-import { signInWithPopup, getAdditionalUserInfo } from "firebase/auth";
-import { auth, provider } from "../firebase";
+import React, { useEffect } from 'react'
+import GoogleButton from 'react-google-button'
+import  { UserAuth }  from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
+export default function Login() {
 
-export const Login = () => {
-    let navigate = useNavigate();
-    const log = (() => {
-        navigate("/");
-    });
+  const {googleSignIn, user} = UserAuth()
+  const navigate = useNavigate()
 
-    return (
-        <div>
-            <button onClick = {log}>
-                login
-            </button>
+  const handleGoogleSignIn = async () => {
+    try {
+        await googleSignIn()
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    if(user != null) {
+        navigate("/")
+    }
+  }, [user])
+
+  return (
+    <div>
+        <h3 class="text-center">Sign In</h3>
+        <div class="d-flex justify-content-center">
+            <GoogleButton onClick={handleGoogleSignIn}/>
         </div>
-    )
+    </div>
+  )
 }
