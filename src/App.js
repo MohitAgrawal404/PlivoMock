@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
 import Camera from './components/camera.js';
 import { AuthContextProvider } from "./context/AuthContext";
+import Contact from "./components/Contact";
 
 function App() {
   // const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -26,6 +27,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/" element={<Dashboard/>} />
             <Route path="/camera" element={<Camera/>}/>
+            <Route path="/contact" element={<Contact/>}/>
           </Routes>
       </Router>
     </AuthContextProvider>
