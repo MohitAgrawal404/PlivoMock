@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Login from './components/Login';
 import {Dashboard} from './components/Dashboard';
+import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
@@ -20,6 +21,7 @@ function App() {
   return (
     <AuthContextProvider>
       <Router>
+        <Navbar/>
           <Routes>
             <Route path="/login" element={<Login/>} />
             <Route path="/" element={<Dashboard/>} />

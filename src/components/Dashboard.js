@@ -15,7 +15,6 @@ export const Dashboard = () => {
 
     return (
         <div>
-            <button onClick={logOut}>Logout</button>
             Dashboard
         </div>
     )
