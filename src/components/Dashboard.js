@@ -11,10 +11,6 @@ export const Dashboard = () => {
     const [isEmail, setIsEmail] = useState(false)
 
 
-    useEffect(() => {
-        console.log(isEmail)
-    }, [isEmail])
-
     const handleEmail = () => {
         setIsEmail(!isEmail)
     }
