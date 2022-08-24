@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import { UserAuth } from '../context/AuthContext';
 
-export default function Contact() {
+export default function Contact(handleEmail) {
 
   const form = useRef();
   const { user } = UserAuth()
@@ -16,6 +16,7 @@ export default function Contact() {
       }, (error) => {
           console.log(error.text);
       });
+      window.location.reload()
   };
 
   return (
