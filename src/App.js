@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import Login from './components/Login';
 import {Dashboard} from './components/Dashboard';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
@@ -10,15 +12,24 @@ import { AuthContextProvider } from "./context/AuthContext";
 import Contact from "./components/Contact";
 
 function App() {
-  // const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
-  // const signuserOut = () => {
-  //   signOut(auth).then(() => {
-  //     localStorage.clear();
+  useEffect (() => {
+    auth.onAuthStateChanged(authUser => {
+      if (authUser){
+        dispatch(login({
+          uid: authUser.uid,
+          email: authUser.email,
+          displayName: authUser.displayName
+        }))
+      } else{
+        dispatch(logout())
+      }
+    })
+  }, [])
 
-  //     setIsAuth(false);
-  //   });
-  // };
+  
   return (
     <AuthContextProvider>
       <Router>
