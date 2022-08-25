@@ -4,7 +4,7 @@ import {Dashboard} from './components/Dashboard';
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "./config/firebase";
 import Camera from './components/camera.js';
 import { AuthContextProvider } from "./context/AuthContext";
 import Contact from "./components/Contact";

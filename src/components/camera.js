@@ -1,5 +1,7 @@
-import React, { useRef, useEffect }from 'react';
-
+import React, { useRef, useEffect, useState }from 'react';
+import { storage } from '../config/firebase.js'
+import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import Upload2firebase from './firebaseUploader';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Camera() {
@@ -26,7 +28,8 @@ function Camera() {
             .catch((error) => {
                 console.error(error)
             })
-    }
+    };
+
 
     const takePicture = () =>{
         // width and height
@@ -52,12 +55,18 @@ function Camera() {
     }, [videoRef])
 
     return (
-        <div className='container'>
+        <div >
+            <div className='container'>
             <h1 className='text-center'> Camera</h1>
             <video className='container' ref={videoRef}></video>
             <button onClick={takePicture} className='btn btn-danger container'> Take Photo</button>
+            
             <canvas ref={photoRef}></canvas>
+            < Upload2firebase />
+            </div>
+            
         </div>
+        
     )
 }
 export default  Camera;
