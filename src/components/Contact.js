@@ -19,7 +19,7 @@ export default function Contact(handleEmail) {
       }, (error) => {
           console.log(error.text);
       });
-    await addDoc(emailCollection, {
+    addDoc(emailCollection, {
       name: form.current[0].value,
       email: form.current[1].value,
       subject: form.current[2].value,

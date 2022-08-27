@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext'
 import Contact from './Contact';
 import { Container } from 'react-bootstrap';
-
+import {FullView} from './FullView'
 
 export const Dashboard = () => {
     const navigate = useNavigate()
@@ -21,6 +21,7 @@ export const Dashboard = () => {
             Dashboard
             {isEmail?  <button onClick={handleEmail}>Cancel</button> : <button onClick={handleEmail}>Send Email to Admin</button>}
             {isEmail? <Container class="w-50"><Contact/></Container> : ""}
+            <FullView />
         </div>
     )
 }
