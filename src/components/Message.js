@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { selectUser } from './features/userSlice';
+import { useSelector } from 'react-redux';
 export const Message = (({ id, data: {timestamp, displayName, email, uid, message}}, ref) => {
 
     const user = useSelector(selectUser);

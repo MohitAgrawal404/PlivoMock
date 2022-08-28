@@ -56,14 +56,20 @@ function Camera() {
 
     return (
         <div >
+   
             <div className='container'>
             <h1 className='text-center'> Camera</h1>
             <video className='container' ref={videoRef}></video>
             <button onClick={takePicture} className='btn btn-danger container'> Take Photo</button>
-            
             <canvas ref={photoRef}></canvas>
-            < Upload2firebase />
+            
             </div>
+
+            <div>
+             < Upload2firebase />
+   
+            </div>
+
             
         </div>
         
