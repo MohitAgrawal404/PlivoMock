@@ -5,25 +5,39 @@ import {db} from '../config/firebase';
 import firebase from 'firebase/compat/app';
 import { selectUser } from './features/userSlice';
 import { Message } from './Message';
-import { setDoc, onSnapshot, query, collection, orderBy, doc, addDoc } from 'firebase/firestore';
+import { setDoc, onSnapshot, query, collection, orderBy, doc, addDoc, getDocs } from 'firebase/firestore';
+import FlipMove from 'react-flip-move';
+
 
 export const MessageView = (() => {
 
     const user = useSelector(selectUser);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
-    const chatId = useSelector(selectChatId);
+    const chatId = useSelector(selectChatId); 
 
     useEffect(() => {
         if(chatId) {
-            onSnapshot(query(collection(db, 'chats', chatId,'messages'), orderBy("timestamp", "desc")), 
-            (snapshot) => {
-                setMessages(snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    data: doc.data()
-                })
-                ))
-            })
+            (async () => {
+                const querySnapshot = await getDocs(collection(db, 'chats', chatId,'messages'));
+                if (querySnapshot != null) {
+                    let temp = [];
+                    querySnapshot.forEach(
+                    (snapshot) => {
+                        
+                        temp.push({
+                            id: snapshot.id,
+                            data: snapshot.data()
+                        })
+                        
+                    })
+                    setMessages(temp);
+                    console.log(messages);
+                    console.log(chatId);
+                }
+            })();
+            return () => {
+            }  
         }
     }, [chatId])
     
@@ -45,9 +59,11 @@ export const MessageView = (() => {
                 Customer Service
             </div>
             <div>
-                {messages.map(({id, data}) => {
-                    <Message id = {id} data = {data} />
-                })}
+            <FlipMove> 
+                {messages.map(({id, data}) => (
+                    <Message key = {id} contents = {data} />
+                ))}
+            </FlipMove>
             </div>
             <div className ="chat__input">
                 <form>
