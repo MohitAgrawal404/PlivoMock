@@ -10,6 +10,7 @@ import { auth } from "./config/firebase";
 import Camera from './components/camera.js';
 import { AuthContextProvider } from "./context/AuthContext";
 import Contact from "./components/Contact";
+import PhotoSend from "./components/fileSending";
 
 function App() {
   const user = useSelector(selectUser);
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<Dashboard/>} />
             <Route path="/camera" element={<Camera/>}/>
             <Route path="/contact" element={<Contact/>}/>
+            <Route path="/fileSending" element={<PhotoSend/>}/>
           </Routes>
       </Router>
     </AuthContextProvider>

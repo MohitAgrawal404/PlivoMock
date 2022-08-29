@@ -16,7 +16,7 @@ const Upload2firebase = () => {
         if (!file) {
             alert("Please choose a file first!")
         }
-        const storageRef = ref(storage, `/files/$(file.name)`)
+        const storageRef = ref(storage, `/files/${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
     
         uploadTask.on(
@@ -38,12 +38,17 @@ const Upload2firebase = () => {
     };
 
     return (
-        <div>
-            {/*<input type="file" onChange={handleChange}>*/}
+ 
+            <form>
+                <label>            
+                <input type="file" onChange={handleChange}/>
                 <button onClick={handleUpload}>Upload</button>
                 <p>{percent} "% done"</p>
-            {/*</input>*/}
-        </div>
+
+            </label>
+            </form>
+
+
     );
 }
 

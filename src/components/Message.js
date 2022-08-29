@@ -1,9 +1,7 @@
-import React, { forwardRef } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { selectUser } from './features/userSlice';
-
-
-export const Message = forwardRef(({ id, contents: {timestamp, message, uid, email, displayName}}, ref) => {
+import { useSelector } from 'react-redux';
+export const Message = (({ id, data: {timestamp, displayName, email, uid, message}}, ref) => {
 
     const user = useSelector(selectUser);
 
