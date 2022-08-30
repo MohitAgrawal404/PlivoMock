@@ -14,12 +14,14 @@ export const MessageView = (() => {
     const user = useSelector(selectUser);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
+    const [change, setChange] = useState(true);
     const chatId = useSelector(selectChatId); 
 
     useEffect(() => {
         if(chatId) {
             (async () => {
-                const querySnapshot = await getDocs(collection(db, 'chats', chatId,'messages'));
+                const q = query(collection(db, 'chats', chatId,'messages'), orderBy("timestamp"));
+                const querySnapshot = await getDocs(q);
                 if (querySnapshot != null) {
                     let temp = [];
                     querySnapshot.forEach(
@@ -39,7 +41,7 @@ export const MessageView = (() => {
             return () => {
             }  
         }
-    }, [chatId])
+    }, [chatId, change])
     
     const sendMessage = (e) => {
         e.preventDefault();
@@ -52,7 +54,9 @@ export const MessageView = (() => {
 
         });
         setInput("");
+        setChange(!change);
     }
+    
     return (
         <div>
             <div>
