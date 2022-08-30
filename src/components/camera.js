@@ -66,7 +66,7 @@ function Camera() {
             </div>
 
             <div>
-             < Upload2firebase />
+
    
             </div>
 
