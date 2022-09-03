@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from 'react'; 
-import { collection } from "firebase/firestore"; 
 import {db} from '../config/firebase';
 import { setChat } from './features/chatSlice';
 import { useDispatch } from 'react-redux'
-import { Message } from './Message';
+import { MessageCustomer } from './MessageCustomer';
 import FlipMove from 'react-flip-move';
 import { setDoc, onSnapshot, query, collection, orderBy, doc, addDoc, getDocs } from 'firebase/firestore';
 import firebase from 'firebase/compat/app';
-import {db} from '../config/firebase';
 import { selectChatId, selectChatName } from './features/chatSlice';
 import { useSelector } from 'react-redux';
 
@@ -112,7 +110,7 @@ export const Customer = () => {
                 <div>
                     <FlipMove> 
                         {messages.map(({id, data}) => (
-                            <Message key = {id} contents = {data} />
+                            <MessageCustomer key = {id} contents = {data} />
                         ))}
                     </FlipMove>
                 </div>
