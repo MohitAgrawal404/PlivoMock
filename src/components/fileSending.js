@@ -11,15 +11,31 @@ function PhotoSend() {
         <body>
         <div>
             <div>
-            <button onClick={() => {setShowCamera(true)}} > Camera </button>
-            { showCamera ? <Camera/> : null }
+            { showCamera ? ( 
+                <>
+                     
+                    <button onClick={() => {setShowCamera(false)}} > X </button> 
+                    <Camera/>
+                </>
+                ): ( 
+                <>
+                        
+                    <button onClick={() => {setShowCamera(true)}} > Camera </button>
+                </>)}
+            
             </div>
             <div>
-            <button onClick={() => {setShowFile(true)}}> File</button>
-            { showFile ? <Upload2firebase /> : null }
+            
+            { showFile ?( 
+                <>
+                <button onClick={() => {setShowFile(false)}} > X </button> 
+                <Upload2firebase />
+                </>
+             ): (<button onClick={() => {setShowFile(true)}}> File</button>) }
             </div>
             </div>
         </body>
     )
 };
 export default PhotoSend;
+
