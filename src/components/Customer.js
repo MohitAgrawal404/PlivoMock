@@ -49,15 +49,17 @@ export const Customer = () => {
     }, [chatId, change])
 
 
-    const onHandleSubmit = (event) => {
+    const onHandleSubmit = async (event) => {
         event.preventDefault();
         setActive(true);
         const chatName = "In-app Customer";
 
         
-        const d = addDoc(collection(db, 'chats'), {
+        const d = await addDoc(collection(db, 'chats'), {
             chatName: chatName
         })
+
+        console.log(d.id)
 
         dispatch(
             setChat({
