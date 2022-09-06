@@ -5,7 +5,7 @@ import Contact from './Contact';
 import { Container } from 'react-bootstrap';
 import {FullView} from './FullView'
 import { Customer } from './Customer';
-
+import PhotoSend from './fileSending';
 export const Dashboard = () => {
     const navigate = useNavigate()
     const {user, logOut} = UserAuth()
@@ -25,7 +25,9 @@ export const Dashboard = () => {
             {!user ? 
             (<Customer/>) 
             : 
-            (<FullView />)
+            (<div><FullView />
+
+            <PhotoSend/></div>)
             }
         </div>
     )
