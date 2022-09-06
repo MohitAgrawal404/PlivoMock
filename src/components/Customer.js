@@ -88,6 +88,12 @@ export const Customer = () => {
         <div>
             {!active ? 
             (<div> 
+                <p>
+                    Welcome to Contacto!
+                </p>
+                <p>
+                    Please put your name and email address to chat with one of our service representatives
+                </p>
                 <form onSubmit = {onHandleSubmit}>
                     <label>
                         Name: 
