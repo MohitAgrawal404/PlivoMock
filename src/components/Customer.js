@@ -8,7 +8,7 @@ import { setDoc, onSnapshot, query, collection, orderBy, doc, addDoc, getDocs } 
 import firebase from 'firebase/compat/app';
 import { selectChatId, selectChatName } from './features/chatSlice';
 import { useSelector } from 'react-redux';
-
+import PhotoSend from './fileSending';
 
 
 export const Customer = () => {
@@ -132,6 +132,7 @@ export const Customer = () => {
                         />
                         <button onClick = {sendMessage}>Send Message</button>
                     </form>
+                    <PhotoSend/>
                 </div>
             </div>
             )
