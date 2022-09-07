@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { setChat } from './features/chatSlice';
 import {db} from '../config/firebase';
 import { collection, orderBy, onSnapshot, query} from "firebase/firestore"; 
-
+import './ConversationBar.css'
 export const BarChat = ({ id, chatName}) => {
 
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const BarChat = ({ id, chatName}) => {
     },[id])
 
     return(
-        <div onClick = { () => {
+        <div className = "sidebarChat" onClick = { () => {
             dispatch(
                 setChat({
                     chatId: id,
@@ -28,9 +28,13 @@ export const BarChat = ({ id, chatName}) => {
                 })
             )
         }}>
-            <h3>
-                {chatName} 
-            </h3>
+            <div className = "sidebarChat__info">
+                <h3>
+                    {chatName} 
+                </h3>
+                <p>{chatInfo[0]?.message}</p>
+            </div>
+            
 
         </div>
     )

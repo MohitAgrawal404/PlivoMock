@@ -9,6 +9,7 @@ import firebase from 'firebase/compat/app';
 import { selectChatId, selectChatName } from './features/chatSlice';
 import { useSelector } from 'react-redux';
 import PhotoSend from './fileSending';
+import './MessageView.css';
 
 
 export const Customer = () => {
@@ -111,11 +112,15 @@ export const Customer = () => {
             
             :
             
-            (<div> 
-                <div>
-                    Customer Service
+            (<div className = "chat"> 
+                <div className = "chat__header">
+                    <h4>
+                        <span className='chat__channelName'>
+                            Customer Service
+                        </span>
+                    </h4>
                 </div>
-                <div>
+                <div className='chat__messages'>
                     <FlipMove> 
                         {messages.map(({id, data}) => (
                             <MessageCustomer key = {id} contents = {data} />
@@ -126,7 +131,7 @@ export const Customer = () => {
                     <form>
                         <input 
                             value = {input}
-                            placeholder = "!message" 
+                            placeholder = "send message" 
                             type = "text" 
                             onChange = {(e) => setInput(e.target.value)}
                         />
@@ -135,6 +140,7 @@ export const Customer = () => {
                     <PhotoSend/>
                 </div>
             </div>
+            
             )
             }
         </div>

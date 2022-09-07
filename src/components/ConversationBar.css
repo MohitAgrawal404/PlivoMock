@@ -1,0 +1,50 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.35;
+    height: 100vh;
+    background-color: #f5f5f5;
+    border-right: 1px solid lightgray;
+  }
+  
+  .sidebar__header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+  }
+
+  .sidebar__chats {
+    overflow: scroll;
+  }
+  
+  .sidebar__chats::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+
+  .sidebarChat {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+  }
+  
+  .sidebarChat:hover {
+    background-color: #3e93fd;
+    color: white;
+    border-radius: 33px;
+  }
+  
+  .sidebarChat__info {
+    margin-left: 15px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .sidebarChat__info > small {
+    position: absolute;
+    bottom: -18px;
+    right: 0px;
+  }

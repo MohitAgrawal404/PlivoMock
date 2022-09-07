@@ -27,7 +27,7 @@ export const Dashboard = () => {
             : 
             (<div><FullView />
 
-            <PhotoSend/></div>)
+            </div>)
             }
         </div>
     )

@@ -7,7 +7,8 @@ import { selectUser } from './features/userSlice';
 import { Message } from './Message';
 import { setDoc, onSnapshot, query, collection, orderBy, doc, addDoc, getDocs } from 'firebase/firestore';
 import FlipMove from 'react-flip-move';
-
+import './MessageView.css';
+import PhotoSend from './fileSending';
 
 export const MessageView = (() => {
 
@@ -58,27 +59,33 @@ export const MessageView = (() => {
     }
     
     return (
-        <div>
-            <div>
-                Customer Service
+        <div className = "chat">
+            <div className = "chat__header">
+                <h4>
+                    <span className='chat__channelName'>
+                        In-App Customer
+                    </span>
+                </h4>
+                
             </div>
-            <div>
-            <FlipMove> 
-                {messages.map(({id, data}) => (
-                    <Message key = {id} contents = {data} />
-                ))}
-            </FlipMove>
+            <div className='chat__messages'>
+                <FlipMove> 
+                    {messages.map(({id, data}) => (
+                        <Message key = {id} contents = {data} />
+                    ))}
+                </FlipMove>
             </div>
             <div className ="chat__input">
                 <form>
                     <input 
                         value = {input}
-                        placeholder = "!message" 
+                        placeholder = "send message" 
                         type = "text" 
                         onChange = {(e) => setInput(e.target.value)}
                     />
                     <button onClick = {sendMessage}>Send Message</button>
                 </form>
+                <PhotoSend/>
             </div>
         </div>
     )

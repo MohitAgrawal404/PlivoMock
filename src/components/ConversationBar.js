@@ -4,7 +4,7 @@ import {BarChat} from './BarChat';
 import { selectUser } from './features/userSlice';
 import { db, auth } from '../config/firebase'
 import { collection, doc, setDoc, onSnapshot, addDoc } from "firebase/firestore"; 
-
+import './ConversationBar.css'
 
 export const ConversationBar = () => {
 
@@ -20,22 +20,19 @@ export const ConversationBar = () => {
         })
     }, [])
 
-    const addChat = () => {
-        const chatName = "temp";
-        if(chatName){
-            addDoc(collection(db, 'chats'), {
-                chatName: chatName
-            })
-        }
-    }
+    // const addChat = () => {
+    //     const chatName = "temp";
+    //     if(chatName){
+    //         addDoc(collection(db, 'chats'), {
+    //             chatName: chatName
+    //         })
+    //     }
+    // }
 
     return (
-        <div>
-            Conversation
-            <button onClick = {addChat}>
-                Add Chat
-            </button>
-            <div>
+        <div className='sidebar'>
+            
+            <div className = "sidebar__chats">
                 { chats.map(({ id, data: { chatName }}) => (
                     <BarChat
                         key = {id}
