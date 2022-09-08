@@ -128,7 +128,7 @@ export const Customer = () => {
                     </FlipMove>
                 </div>
                 <div className ="chat__input">
-                    <form>
+                    <form onSubmit={sendMessage}>
                         <input 
                             value = {input}
                             placeholder = "send message" 
