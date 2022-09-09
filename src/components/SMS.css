@@ -1,0 +1,8 @@
+.sms-container {
+    display: flex;
+    height: 300px;
+    width: 250px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
