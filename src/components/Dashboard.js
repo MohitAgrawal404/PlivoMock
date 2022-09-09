@@ -9,19 +9,9 @@ import PhotoSend from './fileSending';
 export const Dashboard = () => {
     const navigate = useNavigate()
     const {user, logOut} = UserAuth()
-    const [isEmail, setIsEmail] = useState(false)
-
-
-    const handleEmail = () => {
-        setIsEmail(!isEmail)
-    }
-
 
     return (
         <div>
-            Dashboard
-            {isEmail?  <button onClick={handleEmail}>Cancel</button> : <button onClick={handleEmail}>Send Email to Admin</button>}
-            {isEmail? <Container class="w-50"><Contact/></Container> : ""}
             {!user ? 
             (<Customer/>) 
             : 

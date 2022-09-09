@@ -10,7 +10,6 @@ export const MessageCustomer = forwardRef(({ id, contents: {timestamp, message, 
    return (
       <div ref = {ref} className = {`message ${uid === "Anonymous" && "message__sender"}`}>
            <p>{message}</p>
-           <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
        </div>
    )
 })
