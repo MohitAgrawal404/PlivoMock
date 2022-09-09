@@ -6,10 +6,12 @@ import { emailCollection } from '../config/firebase';
 import { async } from '@firebase/util';
 
 
-export default function Contact(handleEmail) {
+export const Contact = ({name, email}) => {
 
   const form = useRef();
   const { user } = UserAuth()
+  console.log(name)
+  console.log(email)
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -19,26 +21,22 @@ export default function Contact(handleEmail) {
       }, (error) => {
           console.log(error.text);
       });
-    addDoc(emailCollection, {
-      name: form.current[0].value,
-      email: form.current[1].value,
-      subject: form.current[2].value,
-      message: form.current[3].value
-    })
     window.location.reload()
   };
   
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div class="form-group">
+      {/* <div class="form-group">
         <label for="nameInput">Name</label>
         <input type="text" class="form-control" id="nameInput" name="user_name" required/>
-      </div>
-      <div class="form-group">
+      </div> */}
+      {/* <div class="form-group">
         <label for="emailInput">Email</label>
         <input type="email" class="form-control" id="emailInput" name="email" required/>
-      </div>
+      </div> */}
+      <input type="hidden" name="user_name" value={name} />
+      <input type="hidden" name="email" value={email}/>
       <div class="form-group">
         <label for="subjectInput">Subject</label>
         <input type="text" class="form-control" id="subjectInput" name="subject" required/>
