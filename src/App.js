@@ -44,6 +44,7 @@ function App() {
           <Route path="/camera" element={<Camera />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/fileSending" element={<PhotoSend />} />
+          <Route path="/email" element={<Email/>} />
           <Route path="/sms" element={<SMS />} />
         </Routes>
       </Router>
