@@ -45,6 +45,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/fileSending" element={<PhotoSend />} />
           <Route path="/sms" element={<SMS />} />
+          <Route path="/email" element={<Email />} />
         </Routes>
       </Router>
     </AuthContextProvider>
