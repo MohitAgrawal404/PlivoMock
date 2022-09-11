@@ -21,7 +21,7 @@ export const Contact = ({name, email}) => {
       }, (error) => {
           console.log(error.text);
       });
-    window.location.reload()
+    //window.location.reload()
   };
   
 
