@@ -6,14 +6,14 @@ export default function SMS() {
   const [textmessage, settextmessage] = useState("");
 
   const sendText = (e) => {
-    e.preventDefault();
     // const recipientInput = document.getElementById("recipient");
     // const textmessageInput = document.getElementById("textmessage");
 
     // recipientInput.value = "";
     // textmessageInput.value = "";
+    console.log("send");
     Axios.get(
-      `http://localhost:4001/send-text?recipient=${recipient}&textmessage=${textmessage}`
+      `http://localhost:4003/send-text?recipient=${recipient}&textmessage=${textmessage}`
     ).catch((err) => {
       console.log(err);
     });

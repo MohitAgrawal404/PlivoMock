@@ -3,7 +3,7 @@ const cors = require("cors");
 // const twilio = require("twilio")(sid);
 
 const accountSid = "ACecaca25eb3d7db1d9c595a901709acd7";
-const authToken = "2ca1ced35d9351cea884c0f43f3381fa";
+const authToken = "32111758a0f18e8d6cae242e7cd9667c";
 const twilio = require("twilio")(accountSid, authToken);
 // const client = new twilio(accountSid, authToken);
 
@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 app.get("/send-text", (req, res) => {
   const { recipient, textmessage } = req.query;
-
+  console.log("a");
   twilio.messages
     .create({
       body: textmessage,
@@ -25,10 +25,11 @@ app.get("/send-text", (req, res) => {
       from: "+18314801108",
     })
     .then((message) => {
+      console.log("sented");
       console.log(message.body);
     });
 });
 
-app.listen(4001, () => {
+app.listen(4003, () => {
   console.log("Running on Port 4000");
 });
