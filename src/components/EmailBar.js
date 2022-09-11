@@ -2,6 +2,7 @@ import { onSnapshot } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react'
 import { emailCollection } from '../config/firebase';
 import { EmailSidebar } from './EmailSidebar';
+import './ConversationBar.css'
 
 export const EmailBar = () => {
 
@@ -17,10 +18,13 @@ export const EmailBar = () => {
     }, [])
 
     return (
-        <div>
-            { emails.map(({id}) => (
-                <EmailSidebar id={id}/>
-            ))}
+        <div className = 'sidebar'>
+            <div className = "sidebar__chats">
+                { emails.map(({id}) => (
+                    <EmailSidebar id={id}/>
+                ))}
+            </div>
+            
         </div>
     )
 }

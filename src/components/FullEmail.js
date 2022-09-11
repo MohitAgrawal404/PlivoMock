@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { selectEmailId } from './features/emailSlice'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Contact } from './Contact'
+import './MessageView.css';
 
 export const FullEmail = () => {
 
@@ -34,21 +35,26 @@ export const FullEmail = () => {
     }
 
     return (
-        <div>
+        <div className = "chat">
             {email? 
             <div>
-                <h3>
-                    <span>{email.subject}</span>
-                </h3>
-                <hr/>
-                <div class="d-flex justify-content-between">
-                    <p class="fw-bold fs-5">{email.name}</p>
-                    <p class="fw-light fs-5">{"<" + email.email + ">"}</p>
-                    <p class="text-end fs-5">{email.date}</p>
+                <div className = "chat__header"> 
+                    <h4>
+                        <span className='chat__channelName'>{email.subject}</span>
+                    </h4>
                 </div>
-                <p>{email.body}</p>
-                {isEmail?  <button onClick={handleEmail}>Cancel</button> : <button onClick={handleEmail}>Reply</button>}
-                {isEmail? <Contact name={email.name} email={email.email}/> : ""}
+                
+                <div className='chat__messages'>
+                    <div class="d-flex justify-content-between">
+                        <p class="fw-bold fs-5">{email.name}</p>
+                        <p class="fw-light fs-5">{"<" + email.email + ">"}</p>
+                        <p class="text-end fs-5">{email.date}</p>
+                    </div>
+                    <p>{email.body}</p>
+                    {isEmail?  <button onClick={handleEmail}>Cancel</button> : <button onClick={handleEmail}>Reply</button>}
+                    {isEmail? <Contact name={email.name} email={email.email}/> : ""}
+                </div>
+                
             </div> 
             : ""}
         </div>
