@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectChatId, selectChatName } from './features/chatSlice';
 import {db} from '../config/firebase';
@@ -32,8 +32,8 @@ export const MessageView = (() => {
                             id: snapshot.id,
                             data: snapshot.data()
                         })
-                        
                     })
+                    
                     setMessages(temp);
                     console.log(messages);
                     console.log(chatId);

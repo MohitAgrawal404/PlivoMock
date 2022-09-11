@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav class="navbar bg-light">
         <div class="container-fluid">
-            <h1>Placeholder</h1>
+            <h1>Contacto</h1>
             {user?.displayName ? <button onClick={handleSignOut}>Logout</button> : <button onClick={handleLogin}>Login</button> }
         </div>
     </nav>

@@ -53,7 +53,7 @@ export const Customer = () => {
     const onHandleSubmit = async (event) => {
         event.preventDefault();
         setActive(true);
-        const chatName = "In-app Customer";
+        const chatName = name;
 
         
         const d = await addDoc(collection(db, 'chats'), {

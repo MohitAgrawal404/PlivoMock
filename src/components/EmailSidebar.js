@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { db } from '../config/firebase';
 import { setEmail } from './features/emailSlice';
+import './ConversationBar.css'
 
 export const EmailSidebar = ( id ) => {
 
@@ -23,14 +24,14 @@ export const EmailSidebar = ( id ) => {
     }, [id])
 
     return (
-        <div onClick = { () => {
+        <div className = "sidebarChat" onClick = { () => {
             dispatch(
                 setEmail({
                     emailId: id
                 })
             )
         }}>
-            <div>
+            <div className = "sidebarChat__info">
                 <h3>
                     {emailInfo?.name} 
                 </h3>
