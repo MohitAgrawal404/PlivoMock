@@ -33,10 +33,3 @@ Page where service representatives can view and reply to customer emails. Any re
 
 ![Service Representative Page Emails](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.52.29%20PM.png?raw=true)
 ![Sent email](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.52.38%20PM.png?raw=true)
-
-## Login Page
-
-Login Page where you can login or signup via Google Authentication
-
-![Login](https://github.com/MohitAgrawal404/GroupCollab/blob/main/READMEIMAGESMEETINGROOM/Screen%20Shot%202022-09-27%20at%208.11.18%20PM.png?raw=true)
-![Google Login](https://github.com/MohitAgrawal404/GroupCollab/blob/main/READMEIMAGESMEETINGROOM/Screen%20Shot%202022-09-27%20at%208.11.45%20PM.png?raw=true)
