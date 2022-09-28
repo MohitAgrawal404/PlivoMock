@@ -51,7 +51,7 @@ export const FullEmail = () => {
                         <p class="text-end fs-5">{email.date}</p>
                     </div>
                     <p>{email.body}</p>
-                    {isEmail?  <button onClick={handleEmail}>Cancel</button> : <button onClick={handleEmail}>Reply</button>}
+                    {isEmail?  <button onClick={handleEmail} className = 'butto'>Cancel</button> : <button onClick={handleEmail} className = 'butto'>Reply</button>}
                     {isEmail? <Contact name={email.name} email={email.email}/> : ""}
                 </div>
                 

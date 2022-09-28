@@ -10,7 +10,7 @@ import { selectChatId, selectChatName } from './features/chatSlice';
 import { useSelector } from 'react-redux';
 import PhotoSend from './fileSending';
 import './MessageView.css';
-
+import './Customer.css';
 
 export const Customer = () => {
 
@@ -89,21 +89,23 @@ export const Customer = () => {
         <div>
             {!active ? 
             (<div> 
-                <p>
+                <p className='Welcome'>
                     Welcome to Contacto!
                 </p>
-                <p>
+                <p className='yo'>
                     Please put your name and email address to chat with one of our service representatives
                 </p>
-                <form onSubmit = {onHandleSubmit}>
-                    <label>
-                        Name: 
-                        <input type = "text" name = "Name" onChange = {(e) => setName(e.target.value)}/>
+                <form onSubmit = {onHandleSubmit} className = "form">
+                    <label className='space'>
+                        Name:  
+                        <input type = "text" name = "Name" onChange = {(e) => setName(e.target.value)} className='in'/>
                     </label>
-                    <label>
-                        Email: 
-                        <input type = "text" name = "Email" onChange = {(e) => setEmail(e.target.value)}/>
+                    <br/>
+                    <label className='space'>
+                        Email:
+                        <input type = "text" name = "Email" onChange = {(e) => setEmail(e.target.value)} className='in'/>
                     </label>
+                    <br/>
                     <input type="submit" />
 
                 </form>
@@ -131,7 +133,7 @@ export const Customer = () => {
                     <form onSubmit={sendMessage}>
                         <input 
                             value = {input}
-                            placeholder = "send message" 
+                            placeholder = "" 
                             type = "text" 
                             onChange = {(e) => setInput(e.target.value)}
                         />

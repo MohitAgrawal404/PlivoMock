@@ -79,7 +79,7 @@ export const MessageView = (() => {
                 <form onSubmit={sendMessage}>
                     <input 
                         value = {input}
-                        placeholder = "send message" 
+                        placeholder = "" 
                         type = "text" 
                         onChange = {(e) => setInput(e.target.value)}
                     />

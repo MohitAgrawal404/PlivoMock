@@ -1,0 +1,36 @@
+.Welcome{
+    font-family: Walsheim;
+    
+    background-image: linear-gradient(to right, rgb(139, 93, 221), rgb(139, 93, 221), rgb(250, 110, 104),rgb(250, 110, 104));
+    font-size: 70px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.yo{
+    font-family: Walsheim;
+    font-size: 30px;
+    text-align: center;
+}
+
+.form{
+    max-width: 25em;
+    border-radius: 25px;
+    font-family: Walsheim;
+    background-image: linear-gradient(to right, rgb(139, 93, 221), rgb(139, 93, 221), rgb(250, 110, 104),rgb(250, 110, 104));
+    text-align: center;
+    color: white;
+    margin: auto;
+    padding: 10px;
+}
+
+.space{
+    padding: 10px;
+}
+
+.in{
+    border-radius: 25px;
+    padding: 5px;
+}

@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Walsheim";   /*Can be any text*/
+  src: local("GT-Walsheim-Pro-Bold"),
+    url("./fonts/GT-Walsheim-Pro-Bold.woff") format("woff");
+}

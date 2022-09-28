@@ -7,15 +7,18 @@
     margin: 10px;
   }
   .message > p {
-    background-color: #f3f3f5;
+    font-family: Walsheim;
+    background-color: rgb(250, 110, 104);
     font-size: medium;
-    padding: 15px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 15px;
     margin: 10px;
     margin-right: auto;
+    color: white;
+    box-shadow: 3px 3px 4px lightgray;
   }
   .message > small {
-    color: gray;
+    color: rgb(250, 110, 104);
     position: absolute;
     font-size: 8px;
     bottom: -5px;
@@ -25,7 +28,8 @@
     margin-left: auto;
   }
   .message__sender > p {
-    background-color: #3cabfa;
+    font-family: Walsheim;
+    background-color: rgb(139, 93, 221);
     color: white;
-    border-radius: 33px;
+    border-radius: 15px;
   }

@@ -1,0 +1,17 @@
+.cent{
+    text-align: center;
+    background-color: rgb(253, 240, 240)
+}
+
+.button{
+    font-family: Walsheim;
+    background-color: white;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    background-color: rgb(253, 240, 240)
+}
+
+.f{
+    display: flex;
+}

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     flex: 0.65;
-    height: 100vh;
-    background-color: white;
+    height: 95vh;
+    background-color: rgb(241, 241, 253);
   }
 
   .chat__header {
@@ -11,12 +11,13 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
-    background-color: #f5f5f5;
+    background-color: rgb(253, 240, 240);
   }
 
   .chat__header > h4 {
+    font-family: Walsheim;
     font-weight: 500;
-    color: gray;
+    color: black;
   }
 
   .chat__header > strong {
@@ -28,6 +29,7 @@
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    padding: 10px;
   }
 
   .chat__messages::-webkit-scrollbar {
@@ -39,7 +41,7 @@
     align-items: center;
     padding: 10px 20px;
     border-top: 1px solid lightgray;
-    background-color: #f5f5f5;
+    background-color: rgb(253, 240, 240);
   }
   
   .chat__input > form {
@@ -56,4 +58,9 @@
   
   .chat__input > form > button {
     display: none;
+  }
+
+  .butto{
+    background-color: white;
+    font-family: Walsheim;
   }

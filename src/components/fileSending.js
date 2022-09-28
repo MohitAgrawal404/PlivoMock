@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState }from 'react';
 import Upload2firebase from './firebaseUploader';
 import Camera from './camera';
+import './Dashboard.css';
 function PhotoSend() {
     const [showCamera, setShowCamera] = useState(false)
     const [showFile, setShowFile] = useState(false)
@@ -9,7 +10,7 @@ function PhotoSend() {
     
     return (
         <body>
-        <div>
+        <div className='f'>
             <div>
             { showCamera ? ( 
                 <>
@@ -20,7 +21,7 @@ function PhotoSend() {
                 ): ( 
                 <>
                         
-                    <button onClick={() => {setShowCamera(true)}} > Camera </button>
+                    <button onClick={() => {setShowCamera(true)}} className = 'button'> Camera </button>
                 </>)}
             
             </div>
@@ -31,7 +32,7 @@ function PhotoSend() {
                 <button onClick={() => {setShowFile(false)}} > X </button> 
                 <Upload2firebase />
                 </>
-             ): (<button onClick={() => {setShowFile(true)}}> File</button>) }
+             ): (<button onClick={() => {setShowFile(true)}} className = 'button'> File</button>) }
             </div>
             </div>
         </body>

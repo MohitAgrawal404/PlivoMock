@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-
+import "./Navbar.css"
 
 export default function Navbar() {
 
@@ -24,8 +24,8 @@ export default function Navbar() {
   return (
     <nav class="navbar bg-light">
         <div class="container-fluid">
-            <h1>Contacto</h1>
-            {user?.displayName ? <button onClick={handleSignOut}>Logout</button> : <button onClick={handleLogin}>Login</button> }
+            <h1 className='title'>Contacto</h1>
+            {user?.displayName ? <button onClick={handleSignOut} className='title'>Logout</button> : <button onClick={handleLogin} className='title'>Login</button> }
         </div>
     </nav>
   )
