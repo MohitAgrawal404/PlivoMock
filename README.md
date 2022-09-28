@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Contacto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A platform for customer service that allows service representatives to send and receive messages from customers through in-app messaging and Email all within the platform. Based off Contacto by Plivo built with React and Firebase.
 
-## Available Scripts
+## Main Page
 
-In the project directory, you can run:
+This is where costumers may start a conversation with a representative simply needing to input their name and email 
 
-### `npm start`
+![Main Page](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.47.45%20PM.png?raw=true)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## In-App Messaging 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In-App Messaging from the Customer's side. Here a Customer can chat with any representative.
 
-### `npm test`
+![In-App Messaging Customer](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.48.30%20PM.png?raw=true)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Login page
 
-### `npm run build`
+Login page for service representatives to access main site to view customer chats and emails
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Login](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.48.48%20PM.png?raw=true)
+![Google Login](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.48.58%20PM.png?raw=true)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Service Representative Page In-App Messages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Main page for service representatives to use to respond to customers. The current page is for the In-App Messaging customers, customers who talked via email can be responded to by clicking on the Emails tab at the top. 
 
-### `npm run eject`
+![Service Representative Page In-App](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.49.53%20PM.png?raw=true)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Service Representative Page Emails
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Page where service representatives can view and reply to customer emails. Any replies to a customer will be sent to their email directly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Service Representative Page Emails](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.52.29%20PM.png?raw=true)
+![Sent email](https://github.com/MohitAgrawal404/PlivoMock/blob/main/READMEIMAGES/Screen%20Shot%202022-09-27%20at%2011.52.38%20PM.png?raw=true)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Login Page
 
-## Learn More
+Login Page where you can login or signup via Google Authentication
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Login](https://github.com/MohitAgrawal404/GroupCollab/blob/main/READMEIMAGESMEETINGROOM/Screen%20Shot%202022-09-27%20at%208.11.18%20PM.png?raw=true)
+![Google Login](https://github.com/MohitAgrawal404/GroupCollab/blob/main/READMEIMAGESMEETINGROOM/Screen%20Shot%202022-09-27%20at%208.11.45%20PM.png?raw=true)
